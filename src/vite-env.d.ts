@@ -5,4 +5,5 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+// 声明大屏插件
 declare module "bin-datav"

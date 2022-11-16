@@ -2,24 +2,28 @@
   <div class="login">
     <div class="login-content">
       <el-form :model="formData" label-width="">
-        <el-form-item label="账号">
+        <el-form-item>
           <el-input
-            :prefix-icon="Search"
+            :prefix-icon="UserFilled"
             size="large"
+            clearable
             style="width: 300px"
             v-model="formData.userName"
             placeholder="请输入账号"
           />
         </el-form-item>
-        <el-form-item label="密码">
+        <el-form-item>
           <el-input
             size="large"
+            :prefix-icon="Lock"
+            clearable
+            show-password
             style="width: 300px"
             v-model="formData.password"
             placeholder="请输入密码"
           />
         </el-form-item>
-        <el-form-item label="">
+        <el-form-item>
           <el-checkbox
             style="width: 300px"
             v-model="rememberPassword"
@@ -28,31 +32,49 @@
           />
         </el-form-item>
         <el-form-item label="">
-          <el-button style="width: 100%" type="primary" :loading="loading"
+          <el-button
+            style="width: 100%"
+            type="primary"
+            :loading="loading"
+            @click="submitLogin"
             >登录</el-button
           >
         </el-form-item>
       </el-form>
-      <el-button type="primary" icon="Search">Search</el-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive, getCurrentInstance } from "vue";
+import { UserFilled, Lock } from "@element-plus/icons-vue";
+const { proxy } = getCurrentInstance(); //引入页面实例，相当于vue2的this
 const formData = reactive({
   userName: "",
   password: "",
 });
 let rememberPassword = ref(true);
 let loading = ref(false);
+const submitLogin = () => {
+  console.log("登录");
+  // console.log(modal);
+  // proxy.$modal.msgSuccess("提交成功",true)
+  proxy.$modal.msgError("提交失败",true)
+
+  // proxy.$modal
+  //   .confirm("提交成功")
+  //   .then((result) => {
+  //     console.log("rrrr");
+  //   })
+  //   .catch((err) => {});
+};
 </script>
 
 <style lang="scss" scoped>
 .login {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(26, 6, 181);
+  background-color: rgb(45, 25, 194);
   overflow: hidden;
   display: flex;
   justify-content: center;
