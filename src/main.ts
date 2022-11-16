@@ -21,7 +21,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 import ElementPlus from "element-plus";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 // 导入elementPlus样式，提示信息没有样式
-import 'element-plus/dist/index.css'
+// import 'element-plus/dist/index.css'
 // 大屏适配插件
 import BinDatav from "bin-datav";
 // 导入插件所有样式
