@@ -28,7 +28,7 @@ import BinDatav from "bin-datav";
 import "bin-datav/lib/styles/index.css";
 // element-plus提示框绑定到原型上
 import modal from "./plugins/modal";
-app.config.globalProperties.$modal = modal
+app.config.globalProperties.$modal = modal;
 
 app
   .use(pinia)

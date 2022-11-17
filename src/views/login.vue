@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, getCurrentInstance, triggerRef } from "vue";
-import { useRouter } from "vue-router";
+// import { ref, reactive, getCurrentInstance } from "vue";
+// import { useRouter } from "vue-router";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import type { FormInstance, FormRules } from "element-plus";
 import { useUserStore } from "@/store/modules/user.ts";
@@ -75,7 +75,11 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
         .login(formData)
         .then((res) => {
           // console.log(res);
-          proxy.$modal.msgSuccess(res.msg);
+          // proxy.$modal.msgSuccess(res.msg);
+          ElMessage({
+            message: "Congrats, this is a success message.",
+            type: "success",
+          });
           setTimeout(() => {
             router.push("/");
             loading.value = false;
@@ -83,23 +87,13 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
         })
         .catch((err) => {
           // console.log(err);
-          proxy.$modal.msgError(err.msg);
+          // proxy.$modal.msgError(err.msg);
           loading.value = false;
         });
     } else {
       console.log("验证失败");
     }
   });
-
-  // console.log(modal);
-
-  // proxy.$modal.msgError("提交失败",true)
-  // proxy.$modal
-  //   .confirm("提交成功")
-  //   .then((result) => {
-  //     console.log("rrrr");
-  //   })
-  //   .catch((err) => {});
 };
 </script>
 
