@@ -1,19 +1,28 @@
 # Vue 3 + TypeScript + Vite
 
-使用vite+element-plus搭建项目模板
-node版本 > 16+
+使用 vite+element-plus 搭建项目模板
+node 版本 > 16+
+
 ## 运行步骤
+
 ### 安装依赖
+
 npm install
+
 ### 运行
+
 npm run dev
+
 ## 使用的插件
-element—plus 
-bin-dataV   大屏插件
 
+element—plus
 
+### 使用的插件 bin-dataV
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+bin-dataV 大屏插件
+https://wangbin3162.gitee.io/bin-datav/#/guide
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### 加载进度条 nprogress
+
+npm install --save nprogress
+https://element-plus.gitee.io/zh-CN/component/button.html

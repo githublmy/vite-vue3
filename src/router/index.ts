@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/views/index.vue";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css"; //这个样式必须引入
+NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提示
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -27,5 +30,14 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+router.beforeEach((to, from, next) => {
+  NProgress.start(); //开启进度条
+  //中间写其他的项目中所需要的一些代码，例如有些网页只有登录了才能进，在这里可以做出判断，判断完了满足要求后就可以放行 next()
+  next();
+});
+
+router.afterEach(() => {
+  NProgress.done(); //完成进度条
 });
 export default router;

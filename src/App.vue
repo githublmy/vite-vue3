@@ -1,16 +1,9 @@
 <template>
-  <!-- <div>
-    {{ store.count }}
-    <button @click="add">点击</button>
-    <button @click="reset">重置</button>
-    <router-link to="/home2">跳转</router-link>
-    <button @click="goTo">跳转</button>
-    <router-view></router-view>
-  </div> -->
   <router-view></router-view>
 </template>
 
-// <script setup lang="ts">
+//
+<script setup lang="ts">
 // import { useCounterStore } from "@/store/index.ts";
 // import {useRouter} from "vue-router"
 // const store = useCounterStore();
@@ -37,4 +30,10 @@
 // };
 
 // // console.log(store.count);
-// </script>
+//
+</script>
+<style lang="scss">
+// #nprogress .bar {
+//   background: blue !important; //加载进度条颜色
+// }
+</style>

@@ -12,6 +12,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "bin-datav": "^0.2.0",
     "element-plus": "^2.2.20",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.23",
     "sass": "^1.56.1",
     "vue": "^3.2.41",

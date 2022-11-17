@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-content">
-      <el-form :model="formData" label-width="">
+      <el-form :model="formData">
         <el-form-item>
           <el-input
             :prefix-icon="UserFilled"
@@ -47,8 +47,13 @@
 
 <script setup lang="ts">
 import { ref, reactive, getCurrentInstance } from "vue";
+import { useRouter } from "vue-router";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
-const { proxy } = getCurrentInstance(); //引入页面实例，相当于vue2的this
+import { useUserStore } from "@/store/modules/user.ts";
+// console.log(useUserStore());
+const store = useUserStore();
+const router = useRouter();
+// const { proxy } = getCurrentInstance(); //引入页面实例，相当于vue2的this
 const formData = reactive({
   userName: "",
   password: "",
@@ -57,10 +62,12 @@ let rememberPassword = ref(true);
 let loading = ref(false);
 const submitLogin = () => {
   console.log("登录");
+  store.login(formData).then(() => {
+    router.push("/");
+  });
   // console.log(modal);
   // proxy.$modal.msgSuccess("提交成功",true)
-  proxy.$modal.msgError("提交失败",true)
-
+  // proxy.$modal.msgError("提交失败",true)
   // proxy.$modal
   //   .confirm("提交成功")
   //   .then((result) => {
