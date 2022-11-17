@@ -1,14 +1,14 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import Home from "@/views/index.vue";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css"; //这个样式必须引入
 NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提示
+import Home from "@/views/index.vue";
+import NotFound from "@/views/error/404.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home1",
     component: Home,
-    children: [],
   },
   {
     path: "/home",
@@ -24,6 +24,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/login",
     name: "login",
     component: () => import("@/views/login.vue"),
+  },
+  // 页面404处理，将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 

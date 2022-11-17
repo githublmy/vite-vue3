@@ -1,3 +1,7 @@
+/*
+ * @LastEditTime: 2022-11-17 15:01:04
+ * @Description: 提示框封装
+ */
 import {
   ElMessage,
   ElMessageBox,
