@@ -12,5 +12,4 @@ const value = ref([]);
 const handleChange = (value) => {
   console.log(value);
 };
-
 </script>
