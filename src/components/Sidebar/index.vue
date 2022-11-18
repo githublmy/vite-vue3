@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-18 14:24:00
+ * @LastEditTime: 2022-11-18 15:53:16
  * @Description: 侧边导航
 -->
 <template>
@@ -27,21 +27,35 @@
         </template>
         <el-menu-item index="1-1">首页-1</el-menu-item>
         <el-menu-item index="1-2">首页-2</el-menu-item>
-          <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
-        <el-menu-item index="1-2">首页-2</el-menu-item>  <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
+        <el-menu-item index="1-2">首页-2</el-menu-item>
+        <el-menu-item index="1-1">首页-1</el-menu-item>
         <el-menu-item index="1-2">首页-2</el-menu-item>
         <el-sub-menu index="1-3">
           <template #title>首页-3</template>
