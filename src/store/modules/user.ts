@@ -1,3 +1,10 @@
+/*
+ * @Author: lu
+ * @LastEditors: Please set LastEditors
+ * @Date: 2022-11-16 11:21:07
+ * @LastEditTime: 2022-11-18 13:51:29
+ * @Description: 用户相关操作数据
+ */
 import { defineStore } from "pinia";
 // 用户操作
 interface IUserInfo {

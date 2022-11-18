@@ -1,0 +1,19 @@
+/* 全局css */
+
+#app {
+  font-size: 14px;
+}
+
+/* 清除浮动 */
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/* ie兼容 */
+.clearfix {
+  *zoom: 1;
+}

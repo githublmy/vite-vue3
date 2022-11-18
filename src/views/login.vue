@@ -46,13 +46,11 @@
 </template>
 
 <script setup lang="ts">
-// import { ref, reactive, getCurrentInstance } from "vue";
-// import { useRouter } from "vue-router";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import type { FormInstance, FormRules } from "element-plus";
 import { useUserStore } from "@/store/modules/user.ts";
 // console.log(useUserStore());
-const store = useUserStore();
+const userStore = useUserStore();
 const router = useRouter();
 const { proxy } = getCurrentInstance(); //引入页面实例，相当于vue2的this
 const formData = reactive({
@@ -71,13 +69,12 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
   await formEl.validate((valid, fields) => {
     if (valid) {
       loading.value = true;
-      store
+      userStore
         .login(formData)
         .then((res) => {
           // console.log(res);
-          // proxy.$modal.msgSuccess(res.msg);
           ElMessage({
-            message: "Congrats, this is a success message.",
+            message: "登录成功",
             type: "success",
           });
           setTimeout(() => {
@@ -87,7 +84,6 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
         })
         .catch((err) => {
           // console.log(err);
-          // proxy.$modal.msgError(err.msg);
           loading.value = false;
         });
     } else {
