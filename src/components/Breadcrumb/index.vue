@@ -7,7 +7,6 @@
         /></el-icon>
         <el-icon v-else size="26" class="iconElIcon"><Expand /></el-icon>
       </div>
-
       <el-breadcrumb class="app-breadcrumb" separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>导航二</el-breadcrumb-item>
@@ -41,7 +40,7 @@ const changeSidebar = () => {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  box-shadow: 0 -10px 10px 5px rgba($color: #000000, $alpha: 0.5);
+  box-shadow: 0 4px 10px rgba($color: #8b8a8a, $alpha: 0.5);
   .left {
     display: flex;
   }
