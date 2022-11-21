@@ -14,7 +14,6 @@
         <el-breadcrumb-item>导航四</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-
     <div>个人中心</div>
   </div>
 </template>
@@ -26,10 +25,9 @@ const sidebarStore = useSidebarStore();
 // console.log(sidebarStore);
 
 const isCollapse = computed(() => sidebarStore.isCollapse);
-const router = useRouter();
-// console.log(router);
+const router = useRoute();
+console.log(router);
 const changeSidebar = () => {
-  // isShow.value = !isShow.value;
   sidebarStore.toggleSidebar();
 };
 </script>

@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-21 09:00:31
- * @LastEditTime: 2022-11-21 15:30:13
+ * @LastEditTime: 2022-11-21 16:43:46
  * @Description: element默认样式修改
  */
 // 修改侧边栏滚动条组件的高度 100% - logo高度
@@ -12,4 +12,18 @@
 // 去掉默认的相对定位
 .el-menu {
   position: static;
+}
+.el-dialog:not(.is-fullscreen) {
+  margin-top: 6vh !important;
+}
+
+// 弹窗固定高度，显示弹窗的滚动条，而不是页面的滚动条
+.el-dialog__body {
+  overflow-y: auto;
+  max-height: calc(88vh - 204px) !important;
+}
+
+// 表单label加粗样式
+label {
+  font-weight: 700 !important;
 }

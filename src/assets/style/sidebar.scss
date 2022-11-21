@@ -6,19 +6,12 @@
     .is-horizontal {
       display: none;
     }
-
   }
 }
 
 .el-menu--vertical {
-  & > .el-menu {
-    .svg-icon {
-      // margin-right: 16px;
-    }
-  }
-
   > .el-menu--popup {
-    max-height: calc(100vh - 20px);
+    max-height: calc(100vh - 10px);
     overflow-y: auto;
 
     &::-webkit-scrollbar-track-piece {

@@ -3,17 +3,73 @@
   font-size: 14px;
   max-height: 100vh;
 }
+//总体样式
+.baseStyle {
+  width: 100%;
+  height: calc(100vh - 50px);
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow: auto;
+  min-width: 800px;
+  // box-shadow: 0 0 8px 0 rgba(173, 178, 178, 0.6);
+}
 
-/* 清除浮动 */
-.clearfix:after,
-.clearfix:before {
+// 修改滚动条样式
+::-webkit-scrollbar-track-piece {
+  background: #edebeb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adadae;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #edebeb;
+}
+
+// 横向滚动条
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+// 切换页面动画
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all 0.5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-move {
+  transition: all 0.5s;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
+// 清除浮动
+.clearfix::before,
+.clearfix::after {
   content: "";
   display: table;
 }
-.clearfix:after {
+
+.clearfix::after {
   clear: both;
 }
-/* ie兼容 */
+
+/* 兼容IE6以及以下 */
 .clearfix {
   *zoom: 1;
 }

@@ -2,16 +2,19 @@
  * @Author: 455886774@qq.com lu123456
  * @Date: 2022-11-18 10:18:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-11-18 17:55:51
+ * @LastEditTime: 2022-11-21 17:44:42
  * @Description: 布局页面
 -->
 <template>
   <div class="layout">
-    <SideBar
-      class="sideBar"
-    ></SideBar>
+    <SideBar class="sideBar"></SideBar>
     <div :class="isCollapse ? 'right2' : 'right1'" class="right">
       <Breadcrumb></Breadcrumb>
+      <router-view v-slot="{ Component }">
+        <transition name="el-fade-in-linear">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
@@ -38,7 +41,7 @@ const isCollapse = computed(() => sidebarStore.isCollapse);
     // transition: width 0.05s;
   }
 }
-.right{
+.right {
   width: 100%;
 }
 .right1 {

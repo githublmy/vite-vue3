@@ -5,12 +5,26 @@ import "nprogress/nprogress.css"; //这个样式必须引入
 NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提示
 
 import Layout from "@/views/layout/index.vue";
-import Home from "@/views/index.vue";
 import NotFound from "@/views/error/404.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    redirect: "/index",
     component: Layout,
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/home/index.vue"),
+      },
+      {
+        path: "user",
+        component: () => import("@/views/system/user/index.vue"),
+      },
+      {
+        path: "role",
+        component: () => import("@/views/system/role/index.vue"),
+      },
+    ],
   },
   // {
   //   path: "/home",

@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-21 15:30:01
+ * @LastEditTime: 2022-11-21 17:42:06
  * @Description: 侧边导航
 -->
 <template>
@@ -26,18 +26,19 @@
         text-color="#fff"
         class="el-menu-vertical-demo"
         :collapse="isCollapse"
+        router
       >
-        <el-menu-item index="5">
+        <el-menu-item index="/">
           <el-icon><setting /></el-icon>
           <template #title>首页</template>
         </el-menu-item>
-        <el-sub-menu index="1">
+        <el-sub-menu index="/user">
           <template #title>
             <el-icon><location /></el-icon>
-            <span>导航一</span>
+            <span>系统设置</span>
           </template>
-          <el-menu-item index="1-1">导航1-1</el-menu-item>
-          <el-menu-item index="1-2">导航1-2</el-menu-item>
+          <el-menu-item index="/user">用户管理</el-menu-item>
+          <el-menu-item index="/role">角色管理</el-menu-item>
           <el-sub-menu index="1-3">
             <template #title><span>导航1-3</span></template>
             <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
