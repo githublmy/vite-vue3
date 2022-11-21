@@ -1,0 +1,15 @@
+/*
+ * @Author: lu
+ * @LastEditors: Please set LastEditors
+ * @Date: 2022-11-21 09:00:31
+ * @LastEditTime: 2022-11-21 15:30:13
+ * @Description: element默认样式修改
+ */
+// 修改侧边栏滚动条组件的高度 100% - logo高度
+.sidebar-main .el-scrollbar {
+  height: calc(100% - 50px);
+}
+// 去掉默认的相对定位
+.el-menu {
+  position: static;
+}

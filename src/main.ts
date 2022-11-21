@@ -1,11 +1,9 @@
 import { createApp } from "vue";
-// 引入pinia
-import { createPinia } from "pinia";
 import router from "./router/index";
+import pinia from "./store";
+
 // 全局样式
-import "./assets/style/common.scss";
-// 初始化样式
-import "./assets/style/normalize.css";
+import "./assets/style/index.scss";
 import App from "./App.vue";
 
 // 国际化，中文
@@ -21,8 +19,6 @@ import "bin-datav/lib/styles/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 const app = createApp(App);
-// 使用pinia代替vuex
-const pinia = createPinia();
 
 // 挂载图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

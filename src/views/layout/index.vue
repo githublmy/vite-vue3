@@ -2,7 +2,7 @@
  * @Author: 455886774@qq.com lu123456
  * @Date: 2022-11-18 10:18:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-11-18 17:18:29
+ * @LastEditTime: 2022-11-18 17:55:51
  * @Description: 布局页面
 -->
 <template>
@@ -10,7 +10,7 @@
     <SideBar
       class="sideBar"
     ></SideBar>
-    <div :class="isCollapse ? 'right2' : 'right1'">
+    <div :class="isCollapse ? 'right2' : 'right1'" class="right">
       <Breadcrumb></Breadcrumb>
     </div>
   </div>
@@ -38,7 +38,9 @@ const isCollapse = computed(() => sidebarStore.isCollapse);
     // transition: width 0.05s;
   }
 }
-
+.right{
+  width: 100%;
+}
 .right1 {
   // width: calc(100% - 200px); //减去侧边栏宽度
   // height: 100%;
