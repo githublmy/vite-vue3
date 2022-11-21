@@ -9,6 +9,9 @@ import NotFound from "@/views/error/404.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    meta: {
+      title: "首页",
+    },
     redirect: "/index",
     component: Layout,
     children: [
@@ -18,10 +21,22 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: "user",
+        meta: {
+          title: "用户管理",
+        },
         component: () => import("@/views/system/user/index.vue"),
+        children: [
+          {
+            path: "index",
+            component: () => import("@/views/index2.vue"),
+          },
+        ],
       },
       {
         path: "role",
+        meta: {
+          title: "角色管理",
+        },
         component: () => import("@/views/system/role/index.vue"),
       },
     ],

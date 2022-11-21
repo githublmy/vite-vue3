@@ -8,10 +8,14 @@
         <el-icon v-else size="26" class="iconElIcon"><Expand /></el-icon>
       </div>
       <el-breadcrumb class="app-breadcrumb" separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>导航二</el-breadcrumb-item>
-        <el-breadcrumb-item>导航三</el-breadcrumb-item>
-        <el-breadcrumb-item>导航四</el-breadcrumb-item>
+        <transition-group name="breadcrumb">
+          <el-breadcrumb-item
+            v-for="item in pathList"
+            :to="{ path: item.path }"
+            :key="item.path"
+            >{{ item.meta.title }}</el-breadcrumb-item
+          >
+        </transition-group>
       </el-breadcrumb>
     </div>
     <div>个人中心</div>
@@ -27,6 +31,17 @@ const sidebarStore = useSidebarStore();
 const isCollapse = computed(() => sidebarStore.isCollapse);
 const router = useRoute();
 console.log(router);
+let pathList = router.matched;
+if (router.path === "/index") {
+  pathList = [
+    {
+      path: "/",
+      meta: {
+        title: "首页",
+      },
+    },
+  ];
+}
 const changeSidebar = () => {
   sidebarStore.toggleSidebar();
 };
