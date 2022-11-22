@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-21 17:53:54
+ * @LastEditTime: 2022-11-22 09:27:06
  * @Description: 侧边导航
 -->
 <template>
@@ -20,7 +20,7 @@
     </div>
     <el-scrollbar>
       <el-menu
-        default-active="5"
+        :default-active="currentPath"
         active-text-color="#37ea96"
         background-color="#304156"
         text-color="#fff"
@@ -42,30 +42,10 @@
           <el-sub-menu index="/user">
             <template #title><span>导航1-3</span></template>
             <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
+            <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
           </el-sub-menu>
           <el-sub-menu index="1-4">
             <template #title><span>导航1-4</span></template>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
             <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
             <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
           </el-sub-menu>
@@ -89,7 +69,6 @@
 
 <script setup lang="ts">
 import logo from "/vite.svg";
-
 import {
   Document,
   Menu as IconMenu,
@@ -98,9 +77,25 @@ import {
 } from "@element-plus/icons-vue";
 import useSidebarStore from "@/store/modules/sidebar.ts";
 
+const route = useRoute();
 const sidebarStore = useSidebarStore();
-let title = ref("后台管理系统");
+
+let currentPath = ref("");
+
 const isCollapse = computed(() => sidebarStore.isCollapse);
+// 监听路由
+watch(
+  () => route.path,
+  (newValue, oldValue) => {
+    // console.log(newValue);
+    if (newValue === "/index") {
+      currentPath.value = "/";
+    } else {
+      currentPath.value = newValue;
+    }
+  },
+  { immediate: true }
+);
 </script>
 <style lang="scss">
 .el-menu-vertical-demo {

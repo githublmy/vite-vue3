@@ -28,7 +28,17 @@ const routes: Array<RouteRecordRaw> = [
         children: [
           {
             path: "index",
+            meta: {
+              title: "dfsdfsd",
+            },
             component: () => import("@/views/index2.vue"),
+          },
+          {
+            path: "index2",
+            meta: {
+              title: "用理df",
+            },
+            component: () => import("@/views/index.vue"),
           },
         ],
       },
@@ -41,16 +51,6 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
-  // {
-  //   path: "/home",
-  //   name: "home",
-  //   component: () => import("@/views/index.vue"),
-  // },
-  // {
-  //   path: "/home2",
-  //   name: "home2",
-  //   component: () => import("@/views/index2.vue"),
-  // },
   {
     path: "/login",
     name: "login",
