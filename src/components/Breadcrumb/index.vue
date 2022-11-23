@@ -120,6 +120,10 @@ function changeSidebar() {
     .img {
       margin: 0 20px 0 10px;
     }
+    .el-dropdown-link {
+      cursor: pointer;
+      color: #409eff;
+    }
   }
 }
 .iconElIcon {

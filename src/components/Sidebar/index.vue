@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-22 09:27:06
+ * @LastEditTime: 2022-11-23 09:10:33
  * @Description: 侧边导航
 -->
 <template>
@@ -39,15 +39,15 @@
           </template>
           <el-menu-item index="/user">用户管理</el-menu-item>
           <el-menu-item index="/role">角色管理</el-menu-item>
-          <el-sub-menu index="/user">
+          <el-sub-menu index="/dh">
             <template #title><span>导航1-3</span></template>
             <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
             <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
           </el-sub-menu>
-          <el-sub-menu index="1-4">
+      <el-sub-menu index="/dh2">
             <template #title><span>导航1-4</span></template>
-            <el-menu-item index="1-3-1">导航1-3-1</el-menu-item>
-            <el-menu-item index="1-3-2">导航1-3-2</el-menu-item>
+            <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
+            <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
           </el-sub-menu>
         </el-sub-menu>
         <el-menu-item index="2">
@@ -79,7 +79,7 @@ import useSidebarStore from "@/store/modules/sidebar.ts";
 
 const route = useRoute();
 const sidebarStore = useSidebarStore();
-
+// 当前路由路径
 let currentPath = ref("");
 
 const isCollapse = computed(() => sidebarStore.isCollapse);

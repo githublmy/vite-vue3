@@ -8,7 +8,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import useStore from "@/store/index.ts";
+// const useSidebarStore = useStore().sidebar;
+// console.log(useStore().sidebar);
+// const { proxy } = getCurrentInstance();
+// console.log(proxy);
+</script>
 
 <style lang="scss" scoped>
 .home {

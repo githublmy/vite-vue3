@@ -1,7 +1,7 @@
 import { createApp } from "vue";
+// // 使用pinia代替vuex
+import { createPinia } from "pinia";
 import router from "./router/index";
-import pinia from "./store";
-
 // 全局样式
 import "./assets/style/index.scss";
 import App from "./App.vue";
@@ -9,8 +9,10 @@ import App from "./App.vue";
 // 国际化，中文
 import ElementPlus from "element-plus";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
+
 // 导入elementPlus样式，提示信息没有样式
 // import 'element-plus/dist/index.css'
+
 // 大屏适配插件
 import BinDatav from "bin-datav";
 // 导入大屏插件所有样式
@@ -19,6 +21,7 @@ import "bin-datav/lib/styles/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 const app = createApp(App);
+const pinia = createPinia();
 
 // 挂载图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
