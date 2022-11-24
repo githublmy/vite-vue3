@@ -106,6 +106,7 @@ function changeSidebar() {
 
 <style lang="scss" scoped>
 .breadcrumb {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;

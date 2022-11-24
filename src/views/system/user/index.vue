@@ -1,5 +1,5 @@
 <template>
-  <div class="baseStyle">
+  <div class="">
     <!-- 表单查询 -->
     <el-form v-show="showSearch" :model="searchForm" inline label-width="80px">
       <el-form-item label="歌手类型">
@@ -59,7 +59,6 @@
       :data="tableData"
       v-loading="loading"
       style="width: 100%"
-      height="400px"
     >
       <el-table-column align="center" prop="name" label="姓名" />
       <el-table-column align="center" prop="alias" label="别名">
