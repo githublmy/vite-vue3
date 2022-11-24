@@ -31,6 +31,7 @@
 
 // // console.log(store.count);
 //
+// console.log(import.meta.env.MODE);
 </script>
 <style lang="scss">
 // #nprogress .bar {

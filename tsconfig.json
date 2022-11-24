@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    // 配置路径@，baseUrl和paths同时存在
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",

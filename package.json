@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "axios": "^1.2.0",
     "bin-datav": "^0.2.0",
     "element-plus": "^2.2.20",
     "nprogress": "^0.2.0",

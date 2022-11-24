@@ -7,14 +7,17 @@
 .baseStyle {
   width: 100%;
   height: calc(100vh - 50px);
-  padding: 16px;
+  padding: 20px 16px;
   box-sizing: border-box;
   border-radius: 4px;
   overflow: auto;
   min-width: 800px;
   // box-shadow: 0 0 8px 0 rgba(173, 178, 178, 0.6);
 }
-
+// 工具栏的下边距
+.mb8 {
+  margin-bottom: 8px;
+}
 // 修改滚动条样式
 ::-webkit-scrollbar-track-piece {
   background: #edebeb;

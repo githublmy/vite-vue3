@@ -110,7 +110,7 @@ function changeSidebar() {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  box-shadow: 0 4px 10px rgba($color: #8b8a8a, $alpha: 0.5);
+  box-shadow: 0 2px 5px rgba($color: #cbcaca, $alpha: 0.5);
   .left {
     display: flex;
   }
