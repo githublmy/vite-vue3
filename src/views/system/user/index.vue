@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="baseStyle ">
     <!-- 表单查询 -->
     <el-form v-show="showSearch" :model="searchForm" inline label-width="80px">
       <el-form-item label="歌手类型">
@@ -55,11 +55,7 @@
       ></RightToolbar>
     </el-row>
     <!-- 表格 -->
-    <el-table
-      :data="tableData"
-      v-loading="loading"
-      style="width: 100%"
-    >
+    <el-table :data="tableData" v-loading="loading" >
       <el-table-column align="center" prop="name" label="姓名" />
       <el-table-column align="center" prop="alias" label="别名">
       </el-table-column>
@@ -86,7 +82,7 @@ import { getUserList } from "@/api/user/index";
 const showSearch = ref(true);
 
 const searchForm = reactive({
-  limit: 10,
+  limit: 5,
   offset: 1,
   type: null,
   area: null,
@@ -157,4 +153,9 @@ async function getList() {
 getList();
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  background-color: aquamarine;
+  // padding: 20px;
+}
+</style>

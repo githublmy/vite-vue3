@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-23 09:10:33
+ * @LastEditTime: 2022-11-25 10:43:52
  * @Description: 侧边导航
 -->
 <template>
@@ -18,52 +18,50 @@
         >后台管理系统</i
       >
     </div>
-    <el-scrollbar>
-      <el-menu
-        :default-active="currentPath"
-        active-text-color="#37ea96"
-        background-color="#304156"
-        text-color="#fff"
-        class="el-menu-vertical-demo"
-        :collapse="isCollapse"
-        router
-      >
-        <el-menu-item index="/">
-          <el-icon><setting /></el-icon>
-          <template #title>首页</template>
-        </el-menu-item>
-        <el-sub-menu index="/user">
-          <template #title>
-            <el-icon><location /></el-icon>
-            <span>系统设置</span>
-          </template>
-          <el-menu-item index="/user">用户管理</el-menu-item>
-          <el-menu-item index="/role">角色管理</el-menu-item>
-          <el-sub-menu index="/dh">
-            <template #title><span>导航1-3</span></template>
-            <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
-            <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
-          </el-sub-menu>
-      <el-sub-menu index="/dh2">
-            <template #title><span>导航1-4</span></template>
-            <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
-            <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
-          </el-sub-menu>
+    <el-menu
+      :default-active="currentPath"
+      active-text-color="#37ea96"
+      background-color="#304156"
+      text-color="#fff"
+      class="el-menu-vertical-demo"
+      :collapse="isCollapse"
+      router
+    >
+      <el-menu-item index="/">
+        <el-icon><setting /></el-icon>
+        <template #title>首页</template>
+      </el-menu-item>
+      <el-sub-menu index="/user">
+        <template #title>
+          <el-icon><location /></el-icon>
+          <span>系统设置</span>
+        </template>
+        <el-menu-item index="/user">用户管理</el-menu-item>
+        <el-menu-item index="/role">角色管理</el-menu-item>
+        <el-sub-menu index="/dh">
+          <template #title><span>导航1-3</span></template>
+          <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
+          <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
         </el-sub-menu>
-        <el-menu-item index="2">
-          <el-icon><icon-menu /></el-icon>
-          <template #title>导航二</template>
-        </el-menu-item>
-        <el-menu-item index="3">
-          <el-icon><document /></el-icon>
-          <template #title>导航三</template>
-        </el-menu-item>
-        <el-menu-item index="4">
-          <el-icon><setting /></el-icon>
-          <template #title>导航四</template>
-        </el-menu-item>
-      </el-menu>
-    </el-scrollbar>
+        <el-sub-menu index="/dh2">
+          <template #title><span>导航1-4</span></template>
+          <el-menu-item index="/user/index">导航1-3-1</el-menu-item>
+          <el-menu-item index="/user/index2">导航1-3-2</el-menu-item>
+        </el-sub-menu>
+      </el-sub-menu>
+      <el-menu-item index="2">
+        <el-icon><icon-menu /></el-icon>
+        <template #title>导航二</template>
+      </el-menu-item>
+      <el-menu-item index="3">
+        <el-icon><document /></el-icon>
+        <template #title>导航三</template>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <el-icon><setting /></el-icon>
+        <template #title>导航四</template>
+      </el-menu-item>
+    </el-menu>
   </div>
 </template>
 
@@ -114,7 +112,6 @@ watch(
   width: 100%;
   height: 50px;
   line-height: 50px;
-  // text-align: center;
   overflow: hidden;
   position: relative;
   img {

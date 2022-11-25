@@ -1,5 +1,5 @@
 <template>
-  <div class="baseStyle">
+  <div class="main">
     <div class="home" v-for="item in 10">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo a,
       voluptatibus modi magnam fugit illo nemo quas et numquam rem voluptates
@@ -17,6 +17,10 @@
 </script>
 
 <style lang="scss" scoped>
+.main {
+  // height: 1000px;
+  background-color: aquamarine;
+}
 .home {
   // height: 3000px;
   width: 200px;
