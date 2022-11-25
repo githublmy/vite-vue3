@@ -14,7 +14,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import useCommonStore from "@/store/modules/common";
+
 const props = defineProps({
   total: {
     required: true,
@@ -74,22 +76,38 @@ const pageSize = computed({
     emit("update:limit", val);
   },
 });
+// 获取滚动条的高度
+const scrollTop = computed(() => commonStore.scrollTop);
+const commonStore = useCommonStore();
+const timer = ref(null);
+// 监听滚动条，回到顶部重置清除定时器
+watch(scrollTop, (v) => {
+  if (v <= 0) {
+    clearInterval(timer.value);
+  }
+});
+// 滚动条的回到顶部
+function elScrollTop() {
+  nextTick(() => {
+    // commonStore.elScrollbar.setScrollTop(-100);
+    timer.value = setInterval(() => {
+      clearInterval(timer);
+      commonStore.setScrollTopReduce();
+      commonStore.elScrollbar.setScrollTop(scrollTop.value);
+    }, 10);
+  });
+}
+
 function handleSizeChange(val) {
   if (currentPage.value * val > props.total) {
     currentPage.value = 1;
   }
   emit("pagination", { page: currentPage.value, limit: val });
-  // if (props.autoScroll) {
-  //   scrollTo(0, 800)
-  // }
+  elScrollTop();
 }
 function handleCurrentChange(val) {
   emit("pagination", { page: val, limit: pageSize.value });
-  // if (props.autoScroll) {
-  //   scrollTo(0, 800)
-  // }
-  console.log(window);
-
+  elScrollTop();
 }
 </script>
 

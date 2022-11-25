@@ -12,8 +12,6 @@ import zhCn from "element-plus/es/locale/lang/zh-cn";
 import BinDatav from "bin-datav";
 // 导入大屏插件所有样式
 import "bin-datav/lib/styles/index.css";
-// 导入全局图标
-import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 // 全局组件
 import RightToolbar from "@/components/RightToolbar/index.vue";
@@ -24,7 +22,9 @@ import Pagination from "@/components/Pagination/index.vue";
 const app = createApp(App);
 const pinia = createPinia();
 
-// 挂载图标
+// 导入全局图标
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+// 注册图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
