@@ -19,7 +19,8 @@
       </el-breadcrumb>
     </div>
     <div class="right">
-      <span>姓名：张三</span>
+      <span v-html="time"></span>
+      <span style="margin-left: 20px">姓名：张三</span>
       <el-avatar
         class="img"
         src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
@@ -47,12 +48,15 @@
 <script setup lang="ts">
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import useSidebarStore from "@/store/modules/sidebar.ts";
-import { tr } from "element-plus/es/locale";
+import { getTodayDate } from "@/utils/generalMethods";
+
 const sidebarStore = useSidebarStore();
 // console.log(sidebarStore);
 const route = useRoute();
 const router = useRouter();
-let pathList = ref([]);
+const pathList = ref([]); //导航菜单
+const time = ref(""); //当前时间
+const timer = ref(null); //定时器
 // 菜单折叠状态
 const isCollapse = computed(() => sidebarStore.isCollapse);
 // 下拉操作
@@ -102,8 +106,25 @@ watch(
 function changeSidebar() {
   sidebarStore.toggleSidebar();
 }
-</script>
 
+// 获取时间
+function getTime() {
+  clearInterval(timer);
+  timer.value = setInterval(() => {
+    time.value = getTodayDate();
+    // console.log(time.value.slice(0, -1));
+    const t1 = time.value.slice(0, -2);
+    time.value = `${t1}<span class='time'>${time.value.slice(-2)}</span>`;
+  }, 1000);
+}
+getTime();
+</script>
+<style lang="scss">
+.time {
+  color: #e52a09 !important;
+  font-size: 20px;
+}
+</style>
 <style lang="scss" scoped>
 .breadcrumb {
   display: flex;

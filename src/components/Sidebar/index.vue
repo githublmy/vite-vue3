@@ -2,7 +2,7 @@
  * @Author: lu
  * @LastEditors: Please set LastEditors
  * @Date: 2022-11-18 10:22:15
- * @LastEditTime: 2022-11-25 10:43:52
+ * @LastEditTime: 2022-11-25 11:26:26
  * @Description: 侧边导航
 -->
 <template>
@@ -105,6 +105,9 @@ watch(
 }
 </style>
 <style lang="scss" scoped>
+.sidebar-main {
+  height: 100vh;
+}
 .img2 {
   margin-left: 16px;
 }

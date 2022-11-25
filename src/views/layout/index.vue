@@ -2,7 +2,7 @@
  * @Author: 455886774@qq.com lu123456
  * @Date: 2022-11-18 10:18:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-11-25 10:54:37
+ * @LastEditTime: 2022-11-25 10:58:03
  * @Description: 布局页面
 -->
 <template>
@@ -56,11 +56,5 @@ const isCollapse = computed(() => sidebarStore.isCollapse);
   justify-content: center;
   height: 100%;
   right: 20px;
-}
-.layout {
-  .sideBar {
-    background-color: #304156;
-    height: 100vh;
-  }
 }
 </style>

@@ -14,6 +14,8 @@
 // console.log(useStore().sidebar);
 // const { proxy } = getCurrentInstance();
 // console.log(proxy);
+import { getTodayDate } from "@/utils/generalMethods";
+console.log(getTodayDate());
 </script>
 
 <style lang="scss" scoped>
