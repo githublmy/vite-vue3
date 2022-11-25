@@ -94,7 +94,7 @@ function elScrollTop() {
       clearInterval(timer);
       commonStore.setScrollTopReduce();
       commonStore.elScrollbar.setScrollTop(scrollTop.value);
-    }, 10);
+    }, 1);
   });
 }
 

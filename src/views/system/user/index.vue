@@ -82,7 +82,7 @@ import { getUserList } from "@/api/user/index";
 const showSearch = ref(true);
 
 const searchForm = reactive({
-  limit: 5,
+  limit: 10,
   offset: 1,
   type: null,
   area: null,

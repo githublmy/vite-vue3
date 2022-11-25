@@ -2,7 +2,7 @@
  * @Author: 455886774@qq.com lu123456
  * @Date: 2022-11-18 10:18:27
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-11-25 17:15:09
+ * @LastEditTime: 2022-11-25 17:42:30
  * @Description: 布局页面
 -->
 <template>
@@ -18,7 +18,7 @@
       </el-header>
       <el-main>
         <el-scrollbar @scroll="scroll" ref="elScrollbar">
-          <router-view v-slot="{ Component }" @scroll="scroll">
+          <router-view v-slot="{ Component }">
             <transition name="el-fade-in-linear">
               <component :is="Component" />
             </transition>
@@ -38,19 +38,14 @@ const commonStore = useCommonStore();
 const { proxy } = getCurrentInstance();
 const sidebarStore = useSidebarStore();
 const isCollapse = computed(() => sidebarStore.isCollapse);
-const scrollTop = computed(() => commonStore.scrollTop);
-
+// 获取滚动条距离保存
 function scroll(v) {
-  console.log(v.scrollTop,"滚动");
-  commonStore.$patch((state) => {
-    // state.setScrollTop(v.scrollTop);
-    // console.log(state);
-    commonStore.setScrollTop(v.scrollTop);
-  });
+  // console.log(v.scrollTop, "滚动");
+  commonStore.setScrollTop(v.scrollTop);
 }
-// commonStore.setScrollTop(scrollTop.value);
-
+// 滚动条dom存到pinia
 nextTick(() => {
+  // 更新滚动条
   proxy.$refs.elScrollbar.update();
   commonStore.$patch((state) => {
     state.elScrollbar = proxy.$refs.elScrollbar;
