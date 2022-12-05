@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-
 import NProgress from "nprogress";
 import "nprogress/nprogress.css"; //这个样式必须引入
 NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提示
@@ -67,6 +66,16 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  // scrollBehavior(to, from, savedPosition) {
+  //   console.log(to, "titototot");
+  //   console.log(savedPosition);
+  //   if (to.hash) {
+  //     return {
+  //       el: to.hash,
+  //       behavior: "smooth",
+  //     };
+  //   }
+  // },
 });
 router.beforeEach((to, from) => {
   NProgress.start(); //开启进度条

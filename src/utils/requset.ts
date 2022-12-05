@@ -1,8 +1,7 @@
 /*
  * @Author: lu
- * @LastEditors: Please set LastEditors
  * @Date: 2022-11-24 15:25:44
- * @LastEditTime: 2022-11-24 16:48:04
+ * @LastEditTime: 2022-12-05 17:50:03
  * @Description: axios封装
  */
 import axios from "axios";
@@ -22,11 +21,11 @@ const instance: AxiosInstance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    // console.log(config);
+    console.log(config);
     return config;
   },
   (error: AxiosError) => {
-    console.log(error);
+    // console.log(error);
     return Promise.reject(new Error());
   }
 );
@@ -42,7 +41,17 @@ instance.interceptors.response.use(
     }
   },
   (error: AxiosError) => {
-    console.log(error);
+    // console.log(error);
+    console.log("err" + error);
+    let { message } = error;
+    if (message == "Network Error") {
+      message = "后端接口连接异常";
+    } else if (message.includes("timeout")) {
+      message = "系统接口请求超时";
+    } else if (message.includes("Request failed with status code")) {
+      message = "系统接口" + message.substring(message.length - 3) + "异常";
+    }
+    ElMessage({ message: message, type: "error", duration: 5 * 1000 });
     return Promise.reject(error);
   }
 );

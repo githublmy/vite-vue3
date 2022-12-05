@@ -103,6 +103,7 @@ function handleSizeChange(val) {
     currentPage.value = 1;
   }
   emit("pagination", { page: currentPage.value, limit: val });
+  // 回到顶部
   elScrollTop();
 }
 function handleCurrentChange(val) {
