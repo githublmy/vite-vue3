@@ -1,7 +1,7 @@
 /*
  * @Author: lu
  * @Date: 2022-11-25 11:28:23
- * @LastEditTime: 2022-11-25 13:11:36
+ * @LastEditTime: 2022-12-06 08:45:32
  * @Description: 常用函数
  */
 /**
@@ -67,4 +67,29 @@ export function getTodayDate(
     }
   }
   return time;
+}
+/**
+ * @description: 文件流下载
+ * @param {any} res  数据结果
+ * @param {string} mimeType 数据类型  默认Excel类型
+ * @return {*}
+ */
+export function resolveBlob(res: any, mimeType: string) {
+  // console.log(res, 9999);
+  const aLink = document.createElement("a");
+  var blob = new Blob([res?.data], { type: "application/vnd.ms-excel" });
+  // //从response的headers中获取filename, 后端response.setHeader("Content-disposition", "attachment; filename=xxxx.docx") 设置的文件名;
+  var patt = new RegExp("filename=([^;]+\\.[^\\.;]+);*");
+  var contentDisposition = decodeURI(res?.headers["content-disposition"]);
+  var result: RegExpExecArray | null = patt.exec(contentDisposition);
+  var fileName: any = result && result[1];
+  fileName = fileName?.replace(/\"/g, "");
+  // console.log(fileName);
+  aLink.style.display = "none";
+  aLink.href = URL.createObjectURL(blob);
+  aLink.setAttribute("download", fileName); // 设置下载文件名称
+  document.body.appendChild(aLink);
+  aLink.click();
+  URL.revokeObjectURL(aLink.href); //清除引用
+  document.body.removeChild(aLink);
 }
