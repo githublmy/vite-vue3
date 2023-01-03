@@ -19,7 +19,7 @@
 <style lang="scss" scoped>
 .main {
   // height: 1000px;
-  background-color: aquamarine;
+  // background-color: aquamarine;
 }
 .home {
   // height: 3000px;
