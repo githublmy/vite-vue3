@@ -13,7 +13,7 @@
 // const useSidebarStore = useStore().sidebar;
 // console.log(useStore().sidebar);
 // const { proxy } = getCurrentInstance();
-// console.log(proxy);
+// console.log(proxy); 测试的
 </script>
 
 <style lang="scss" scoped>
