@@ -1,1 +1,0 @@
-import{_ as e,o as c,c as s}from"./index.06721ded.js";const t={},o={class:"baseStyle"};function n(r,_){return c(),s("div",o,"\u89D2\u8272\u7BA1\u7406")}const d=e(t,[["render",n]]);export{d as default};

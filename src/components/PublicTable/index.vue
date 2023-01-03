@@ -16,7 +16,7 @@ import { getUserList } from "@/api/user/index";
 const props = defineProps({
   tableTitles: Array,
 });
-const tableData = [];
+let tableData = [];
 // 获取歌手
 async function getList() {
   // type
