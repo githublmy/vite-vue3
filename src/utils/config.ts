@@ -1,7 +1,7 @@
 /*
  * @Author: lu
  * @Date: 2022-11-24 15:26:15
- * @LastEditTime: 2022-11-24 16:40:54
+ * @LastEditTime: 2023-01-05 11:54:45
  * @Description: 接口地址配置
  */
 let baseURL = "";
