@@ -10,9 +10,11 @@ body {
   width: 100%;
   height: 100%;
 }
+// 修改根标签为IE盒模型
 html {
   box-sizing: border-box;
 }
+// 所有标签继承IE盒模型
 *,
 *::before,
 *::after {
@@ -69,9 +71,4 @@ html {
 
 .clearfix::after {
   clear: both;
-}
-
-/* 兼容IE6以及以下 */
-.clearfix {
-  *zoom: 1;
 }
