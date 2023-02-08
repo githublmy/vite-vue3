@@ -1,7 +1,7 @@
 /*
  * @Author: lu
  * @Date: 2022-11-24 15:25:44
- * @LastEditTime: 2022-12-05 17:50:03
+ * @LastEditTime: 2023-02-08 10:38:22
  * @Description: axios封装
  */
 import axios from "axios";
@@ -34,8 +34,16 @@ instance.interceptors.response.use(
   (response: AxiosResponse) => {
     // console.log(response);
     const { code } = response.data;
+    const { msg } = response.data;
+
     if (code === 200) {
       return response.data;
+    } else if (code === 10000) {
+      ElMessage({
+        message: msg,
+        type: "error",
+      });
+      return Promise.reject(new Error(msg));
     } else {
       return "无效数据";
     }

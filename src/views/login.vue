@@ -47,15 +47,16 @@
 
 <script setup lang="ts">
 import { UserFilled, Lock } from "@element-plus/icons-vue";
-import type { FormInstance, FormRules } from "element-plus";
+// import type { FormInstance, FormRules } from "element-plus";
 import { useUserStore } from "@/store/modules/user.ts";
+import { setToken } from "@/utils/author";
 // console.log(useUserStore());
 const userStore = useUserStore();
 const router = useRouter();
 const { proxy } = getCurrentInstance(); //引入页面实例，相当于vue2的this
 const formData = reactive({
-  userName: "",
-  password: "",
+  userName: "admin",
+  password: "123456",
 });
 const formDataRef = ref<FormInstance>();
 const formDataRules = reactive<FormRules>({
@@ -72,7 +73,7 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
       userStore
         .login(formData)
         .then((res) => {
-          // console.log(res);
+          console.log(res, 4444);
           ElMessage({
             message: "登录成功",
             type: "success",
@@ -83,7 +84,11 @@ const submitLogin = async (formEl: FormInstance | undefined) => {
           }, 1500);
         })
         .catch((err) => {
-          // console.log(err);
+          console.log(err);
+          ElMessage({
+            message: err.msg,
+            type: "error",
+          });
           loading.value = false;
         });
     } else {

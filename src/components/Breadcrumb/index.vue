@@ -49,7 +49,7 @@
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import useSidebarStore from "@/store/modules/sidebar.ts";
 import { getTodayDate } from "@/utils/generalMethods";
-
+import { removeToken } from "@/utils/author";
 const sidebarStore = useSidebarStore();
 // console.log(sidebarStore);
 const route = useRoute();
@@ -77,6 +77,7 @@ function command(v) {
           type: "success",
           message: "退出成功",
         });
+        removeToken();
         router.push("/login");
       })
       .catch(() => {});

@@ -5,6 +5,7 @@ NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提�
 
 import Layout from "@/views/layout/index.vue";
 import NotFound from "@/views/error/404.vue";
+import { getToken } from "@/utils/author";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -77,10 +78,26 @@ const router = createRouter({
   //   }
   // },
 });
-router.beforeEach((to, from) => {
+router.beforeEach(async (to, from) => {
   NProgress.start(); //开启进度条
   //中间写其他的项目中所需要的一些代码，例如有些网页只有登录了才能进，在这里可以做出判断，判断完了满足要求后就可以放行 next()
-  return true;
+  const token = getToken();
+  console.log(token);
+  console.log(to);
+
+  if (token) {
+    if (to.path === "/login") {
+      return "/";
+    } else {
+      return true;
+    }
+  } else {
+    if (to.path === "/login") {
+      return true;
+    } else {
+      return "/login";
+    }
+  }
 });
 
 router.afterEach(() => {
